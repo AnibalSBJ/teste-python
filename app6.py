@@ -1,12 +1,14 @@
 import statistics
 import math
 
-caminho = str(input("bem-vindo à calculadora de modelos estatísticos, \ndigite o caminho do arquivo que deseja trabalhar: "))
-arquivo = open(caminho,"r+")
-conjunto = (arquivo.readlines())
 
-for index in range(len(conjunto)):
-    conjunto[index] = int(conjunto[index])
+conjunto =[]
+tratamento = []
+
+entrada = str(input("bem vindo À calculadora de elementos estatísticos, \ndigite os números a serem tratados espaçados um do outro: "))
+tratamento = entrada.split()
+for index in range(len(tratamento)):
+    conjunto.append(int(tratamento[index]))
 
 print(f"seu conjunto é: {conjunto}\n")
 
@@ -69,8 +71,8 @@ while opcao != 1:
         print(f"a variância é {statistics.variance(conjunto)}")
     elif opcao == 11:
         print(f"seu conjunto ordenado é: {conjunto}")
-    elif opcao > 11 or opcao < 1:
-        print("opção inválida, digite uma opção válida")
+elif opcao > 11 or opcao < 1:
+         print("opção inválida, digite uma opção válida")
     
 
     
@@ -79,4 +81,3 @@ print("fim do programa, obrigado por usar a calculadora de elementos estatístic
 
 
 
-arquivo.close()
